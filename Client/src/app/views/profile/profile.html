@@ -1,0 +1,67 @@
+<header>
+  <acme-navbar creation-date="main.creationDate"></acme-navbar>
+</header>
+
+<md-content>
+    <div layout="row">
+        <div flex-gt-sm="50" flex>
+            <md-content class="md-no-momentum">
+                <md-input-container class="md-block">
+                  <input ng-model="profile.userProfile.name" type="text" placeholder="Name">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                  <input ng-model="profile.userProfile.lastname" type="text" placeholder="LastName">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                  <input ng-model="profile.userProfile.age" type="text" placeholder="Age">
+                </md-input-container>
+
+                <md-button class="md-raised md-primary">Primary</md-button>
+            </md-content>
+
+        </div>
+        <div flex-gt-sm="50" flex>
+            <md-list flex>
+                <md-toolbar layout="row" class="md-hue-3">
+                  <div class="md-toolbar-tools">
+                    <span>Friends</span>
+                  </div>
+                </md-toolbar>
+                <md-list-item class="md-3-line" ng-repeat="item in profile.friends" ng-click="null">
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Name - {{item.username}}</h3>
+                    </div>
+                </md-list-item>
+                <md-divider ></md-divider>
+                <md-toolbar layout="row" class="md-hue-3">
+                  <div class="md-toolbar-tools">
+                    <span>Favorites</span>
+                  </div>
+                </md-toolbar>
+                <md-list-item class="md-3-line" ng-repeat="item in profile.favorites" ng-click="null">
+                    <!-- <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Song name - {{item.name}}</h3>
+                        <h4>author - {{item.author}}</h4>
+                    </div>
+                </md-list-item>
+                <md-divider ></md-divider>
+                <md-toolbar layout="row" class="md-hue-3">
+                  <div class="md-toolbar-tools">
+                    <span>Playlist</span>
+                  </div>
+                </md-toolbar>
+                <md-list-item class="md-3-line" ng-repeat="item in profile.playlists" ng-click="null">
+                    <!-- <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Name - {{item.name}}</h3>
+                        <h4>author - {{item.author}}</h4>
+                    </div>
+                </md-list-item>
+                <md-divider ></md-divider>
+            </md-list>
+        </div>
+    </div>
+</md-content>

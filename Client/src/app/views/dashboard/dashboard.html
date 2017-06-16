@@ -1,0 +1,63 @@
+<header>
+  <acme-navbar creation-date="main.creationDate"></acme-navbar>
+</header>
+<!-- <h1>DASHBOARD - Welcome {{dashboard.profile.name}} {{dashboard.profile.lastname}}</h1> -->
+<md-content>
+    <div layout="row">
+        <div flex-gt-sm="34" flex>
+            <md-toolbar layout="row" class="md-hue-3">
+              <div class="md-toolbar-tools">
+                <span>Songs</span>
+              </div>
+            </md-toolbar>
+            <md-list flex >
+                <md-subheader class="md-no-sticky" ng-if="dashboard.songList.length == 0">There are no songs available</md-subheader>
+                <md-list-item class="md-3-line" ng-repeat="item in dashboard.songList" ng-click="dashboard.obtainSong(item)" class="noright">
+                  <!-- <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
+                  <div class="md-list-item-text" layout="column">
+                    <h3>{{item.name}}</h3>
+                    <h4>{{item.author}}</h4>
+                    <p>{{item.year}}</p>
+                  </div>
+                  <!-- <i class="material-icons" ng-click="dashboard.clear(item)">clear</i> -->
+                  <i class="material-icons" ng-click="dashboard.addToFavorites(item)">add_circle_outline</i>
+                </md-list-item>
+            </md-list>
+        </div>
+        <div flex-gt-sm="34" flex>
+            <md-toolbar layout="row" class="md-hue-3">
+              <div class="md-toolbar-tools">
+                <span>Users</span>
+              </div>
+            </md-toolbar>
+            <md-list flex>
+                <md-subheader class="md-no-sticky" ng-if="dashboard.userList.length == 0">You have no friends yet</md-subheader>
+                <md-list-item class="md-3-line" ng-repeat="item in dashboard.userList" ng-click="dashboard.obtainFriend(item)">
+                  <!-- <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
+                  <div class="md-list-item-text" layout="column">
+                    <h3>{{item.username}}</h3>
+                  </div>
+                  <i class="material-icons" ng-click="dashboard.addToFriends(item)">add_circle_outline</i>
+                </md-list-item>
+            </md-list>
+        </div>
+        <div flex-gt-sm="32" flex>
+            <md-toolbar layout="row" class="md-hue-3">
+              <div class="md-toolbar-tools">
+                <span>Playlist</span>
+              </div>
+            </md-toolbar>
+            <md-list flex>
+                <md-subheader class="md-no-sticky" ng-if="dashboard.addPlaylist.length == 0">You have no playlist yet</md-subheader>
+                <md-list-item class="md-3-line" ng-repeat="item in dashboard.playlistList" ng-click="dashboard.obtainPlaylist(item)">
+                  <!-- <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
+                  <div class="md-list-item-text" layout="column">
+                    <h3>{{item.name}}</h3>
+                    <h4>{{item.author.username}}</h4>
+                  </div>
+                  <i class="material-icons" ng-click="dashboard.addPlaylist(item)">add_circle_outline</i>
+                </md-list-item>
+            </md-list>
+        </div>
+    </div>
+</md-content>

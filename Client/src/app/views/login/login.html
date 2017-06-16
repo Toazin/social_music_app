@@ -1,0 +1,28 @@
+<header>
+  <acme-navbar creation-date="main.creationDate"></acme-navbar>
+</header>
+<md-content>
+    <div flex-xs flex-gt-xs="20" layout="column" layout-align="space-between">
+        <md-card flex>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline"> LOGIN </span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content flex>
+                <md-input-container flex>
+                    <label>Username</label>
+                    <input ng-model="login.username" flex>
+                  </md-input-container>
+
+            </md-card-content>
+            <div layout="column">
+                <section layout="row" layout-sm="column" layout-wrap>
+                    <md-button class="md-raised" ng-click="login.singIn()">Login</md-button>
+                    <md-button class="md-raised md-primary">Register</md-button>
+              </section>
+            </div>
+          </md-card>
+      </div>
+
+</md-content>

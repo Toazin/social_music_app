@@ -1,0 +1,14 @@
+<md-toolbar layout="row" layout-align="left center">
+
+  <md-button>{{vm.stateName}}</md-button>
+
+  <section flex layout-align="rigth center" ng-if="vm.user">
+    <md-button href="#" class="md-raised" ng-click="vm.logout()">Logout</md-button>
+    <md-button href="#" class="md-raised" ng-click="vm.goToProfile()">Profile</md-button>
+    <md-button href="#" class="md-raised" ng-click="vm.gotToDashboard()">Dashboard</md-button>
+  </section>
+
+    <section flex layout-align="rigth" ng-if="vm.user">
+        <h1>{{vm.user.profile.name}} {{vm.user.profile.lastname}} </h1>
+    </section>
+</md-toolbar>
